@@ -1,0 +1,28 @@
+{
+  "scopeName": "source.egg",
+  "patterns": [
+    {
+      "name": "keyword.control.egg",
+      "match": "\\b(yolk|shellmatch|case|default|endshell|carton|fill|hatch|crackup|lay|incubate)\\b"
+    },
+    {
+      "name": "string.quoted.double.egg",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.egg"
+        }
+      ]
+    },
+    {
+      "name": "constant.numeric.egg",
+      "match": "\\b\\d+\\b"
+    },
+    {
+      "name": "comment.line.number-sign.egg",
+      "match": "#.*$"
+    }
+  ]
+}
