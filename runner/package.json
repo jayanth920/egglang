@@ -1,11 +1,30 @@
 {
-  "name": "egg-runner",
-  "version": "0.1.0",
-  "description": "Egg Language CLI Runner",
-    "bin": {
+  "name": "egglang-cli",
+  "version": "0.1.2",
+  "description": "Command-line runner for the Egg programming language 🥚🐣",
+  "bin": {
     "egg": "./bin/egg.js"
-    },
-  "keywords": ["egg", "language", "cli"],
-  "author": "You",
-  "license": "MIT"
+  },
+  "keywords": [
+    "egg",
+    "egglang",
+    "language",
+    "cli",
+    "interpreter"
+  ],
+  "author": "EJ",
+  "license": "MIT",
+  "files": [
+    "bin",
+    "egg.py",
+    "egg_interpreter.py",
+    "utils.egg"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/egglang"
+  }
 }

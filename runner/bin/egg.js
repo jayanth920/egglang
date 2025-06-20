@@ -20,7 +20,7 @@ if (args[0] === 'run' && args[1]) {
 }
 
 function runEggCode(filePath) {
-  console.log(`🐣 Running Egg code via Python interpreter...\n`);
+  // console.log(`🐣 Running Egg code via Python interpreter...\n`);
 
   // Path to your Python interpreter script (egg.py)
   const eggPyPath = path.resolve(__dirname, '../egg.py');

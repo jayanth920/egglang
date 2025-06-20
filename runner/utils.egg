@@ -1,0 +1,15 @@
+# utils.egg - simple utility functions
+
+# A basic utility to print a welcome message
+yolk welcome_message = "Welcome to the Egg Interpreter!"
+
+hatch welcome_message
+
+# A utility function to add two numbers (pseudo-function style)
+yolk add = (a, b) => {
+  yolk result = a + b
+  hatch result
+}
+
+# A utility variable for testing
+yolk test_value = 42
