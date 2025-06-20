@@ -1,0 +1,25 @@
+{
+  "name": "egg-vscode-extension",
+  "displayName": "Egg Language Support",
+  "description": "Egg language syntax highlighting and basic tooling for VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "egg",
+      "aliases": ["Egg", "egg"],
+      "extensions": [".egg"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "egg",
+      "scopeName": "source.egg",
+      "path": "./syntaxes/egg.tmLanguage.json"
+    }]
+  }
+}

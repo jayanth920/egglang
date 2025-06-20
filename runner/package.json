@@ -1,0 +1,11 @@
+{
+  "name": "egg-runner",
+  "version": "0.1.0",
+  "description": "Egg Language CLI Runner",
+    "bin": {
+    "egg": "./bin/egg.js"
+    },
+  "keywords": ["egg", "language", "cli"],
+  "author": "You",
+  "license": "MIT"
+}

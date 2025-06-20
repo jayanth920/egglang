@@ -1,0 +1,9 @@
+{
+  "name": "egglang-monorepo",
+  "private": true,
+  "workspaces": [
+    "core",
+    "runner",
+    "vscode-extension"
+  ]
+}
