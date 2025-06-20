@@ -22,22 +22,45 @@ Egg is a minimalist, whimsical programming language inspired by eggs and birds �
 ### Requirements
 
 - Python 3.x
+- Node.js (for the CLI and VSCode extension)
+- VS Code (to use the extension)
 
+---
 ### Run Egg Code
 
-You can run Egg code by executing the interpreter script with a `.egg` file or inline code.
-
-Example:
+### 🔹 Option 1: Directly via Python
 
 ```bash
-python egg_interpreter.py your_script.egg
+python core/egg_interpreter.py path/to/script.egg
 ```
 
-or use the included sample Egg code by running:
+### 🔹 Option 2: Using the CLI (recommended)
+
+- Clone the repo:
 
 ```bash
-python egg_interpreter.py
+git clone git@github.com:jayanth920/egglang.git
 ```
+
+or 
+
+```bash
+git clone https://github.com/jayanth920/egglang.git
+```
+
+- Install locally (In the repo directory):
+
+```bash
+cd runner
+npm link
+```
+
+- Then run any .egg file:
+
+```bash
+egg run hello.egg
+```
+---
 
 ## Egg Language Syntax Examples
 ### Variable Assignment
