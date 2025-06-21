@@ -182,5 +182,42 @@ eggspionage -c r
 
 ---
 
+## Inspiration
+Egglang was originally hatched during a late-night coding session when I came across a devpost hackathon in San Antonio.The idea? To build a fun, minimalist programming language where every concept is inspired by eggs, birds, or both. What started as a joke in my mind, writing a program that begins with yolk and ends with a hatch, quickly made into a fully functional interpreter.
+
+- The sheer absurdity of using phrases like crackup for defining functions
+- To basically make it unique and funny, if it is.
+
+## What it does
+- Make simple programs currently with .egg extensions.
+
+## How I built it
+- Interpreter: Walked the AST and evaluated each node using Python classes.
+- Features: Added variables (yolk), arrays (carton), pattern matching (shellmatch), functions (crackup, lay), and built-in utilities like eggtime().
+- Extras: Added fun side commands like eggspionage — a secret easter egg animation when you run eggspionage in the CLI.
+
+## Challenges I ran into
+- Balancing silliness with actual usability, making sure Egglang wasn't just a joke, but something you could write real (simple) programs in.
+- Designing syntax that feels "egg-themed" yet readable and intuitive
+- Debugging parser edge cases when nesting blocks or working with user-defined functions
+
+## Accomplishments that I am proud of
+- The eggspionage easter egg, which is a terminal cam.
+- Made a VS Code extension, which is not live on the vs code extensions store yet, but it supports .egg files language highlighting.
+
+## What I learned
+- Designing a readable syntax that balances fun with function
+- Handling scope, pattern matching, arrays (aka cartons)
+- Deploying it as a language installable using 
+```bash
+npm install -g egglang-cli
+```
+
+## What's next for EggLang
+- Having more keywords and support like real languages maybe.
+- Along with more easter eggs.
+
+---
+
 Thanks for cracking open Egg! 🥚🐣
 
