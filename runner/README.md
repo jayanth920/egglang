@@ -154,17 +154,21 @@ hatch t
 ```bash
 eggspionage
 ```
-By default, the terminal cam will render in base black text mode.
-Here -c refers to color mode. Use one of r, g, b, m, d. r = red, g = green, b = blue, m = multicolor, d = dino mode 🦖🥚.
+- Make sure you have opencv-python and numpy installed.
+- Make sure you have web cam access enabled for vscode.
+- Make sure to resize the terminal for a better experience.
+- Use the slider to scroll to the bottom for current camera frames.
+- By default, the terminal cam will render in base black text mode.<br>
+- Here -c refers to color mode. Use one of r, g, b, m, d. r = red, g = green, b = blue, m = multicolor, d = dino mode 🦖🥚.
 
 Example:
 
 ```bash
-eggspionage -c g
+eggspionage -c r
 ```
 
 ### Features:
-- 📸 Live webcam feed rendered in ASCII
+- 📸 Live webcam feed rendered in ASCII in the terminal
 
 - 🌈 Optional color mode
 
