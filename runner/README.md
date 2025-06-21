@@ -155,7 +155,7 @@ hatch t
 eggspionage
 ```
 By default, the terminal cam will render in base black text mode.
-Here -c refers to color mode. Use one of r, g, b, m, d. r=red, g=green, b=blue, m=multicolor, d=dino mode.
+Here -c refers to color mode. Use one of r, g, b, m, d. r = red, g = green, b = blue, m = multicolor, d = dino mode 🦖🥚.
 
 Example:
 
