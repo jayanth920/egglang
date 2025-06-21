@@ -161,6 +161,8 @@ eggspionage
 - By default, the terminal cam will render in base black text mode.<br>
 - Here -c refers to color mode. Use one of r, g, b, m, d. r = red, g = green, b = blue, m = multicolor, d = dino mode 🦖🥚.
 
+### Use VSCode terminal to run eggspionage for best experience.
+
 Example:
 
 ```bash
