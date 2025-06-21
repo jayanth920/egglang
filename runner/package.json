@@ -1,9 +1,10 @@
 {
   "name": "egglang-cli",
-  "version": "0.1.5",
+  "version": "0.1.10",
   "description": "Command-line runner for the Egg programming language 🥚🐣",
   "bin": {
-    "egg": "./bin/egg.js"
+    "egg": "./bin/egg.js",
+    "eggspionage": "./bin/eggspionage"
   },
   "keywords": [
     "egg",
@@ -18,6 +19,7 @@
     "bin",
     "egg.py",
     "egg_interpreter.py",
+    "eggspionage.py",
     "utils.egg"
   ],
   "engines": {
@@ -25,6 +27,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/egglang"
+    "url": "https://github.com/jayanth920/egglang"
   }
 }

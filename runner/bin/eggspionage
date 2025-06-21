@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+import { spawn } from 'child_process';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+
+// Resolve __dirname in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Resolve absolute path to eggspionage.py relative to this script
+const eggspionagePyPath = join(__dirname, '../eggspionage.py');
+
+const args = process.argv.slice(2);
+
+function checkPythonExists() {
+  return new Promise((resolve) => {
+    const check = spawn('python3', ['--version']);
+    check.on('error', () => resolve(false));
+    check.on('exit', (code) => resolve(code === 0));
+  });
+}
+
+(async () => {
+  const pythonExists = await checkPythonExists();
+
+  if (!pythonExists) {
+    console.error('Error: Python 3 not found on your system. Please install Python 3 and ensure it is on your PATH.');
+    process.exit(1);
+  }
+
+  const pythonProcess = spawn('python3', [eggspionagePyPath, ...args], {
+    stdio: 'inherit',
+    detached: true
+  });
+
+  // Forward signals to the entire child process group
+  const signals = ['SIGINT', 'SIGTERM', 'SIGHUP'];
+  for (const sig of signals) {
+    process.on(sig, () => {
+      try {
+        process.kill(-pythonProcess.pid); // negative PID kills process group
+      } catch (e) {
+        // silently ignore if already dead
+      }
+    });
+  }
+
+  pythonProcess.on('close', (code) => {
+    process.exit(code);
+  });
+})();
