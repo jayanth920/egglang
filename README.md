@@ -148,6 +148,33 @@ hatch r
 yolk t = eggtime()
 hatch t
 ```
+---
+## Easter Egg - 🥚 Eggspionage: Terminal Cam in ASCII
+
+```bash
+eggspionage
+```
+By default, the terminal cam will render in base black text mode.
+Here -c refers to color mode. Use one of r, g, b, m, d. r=red, g=green, b=blue, m=multicolor, d=dino mode.
+
+Example:
+
+```bash
+eggspionage -c g
+```
+
+### Features:
+- 📸 Live webcam feed rendered in ASCII
+
+- 🌈 Optional color mode
+
+- ⌨️ Cross-platform compatibility (macOS, Linux, Windows)
+
+- 🧠 Automatically scales to your terminal size
+
+- ✂️ Gracefully exits on Ctrl+C
+
+---
 
 Thanks for cracking open Egg! 🥚🐣
 
