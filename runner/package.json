@@ -1,6 +1,6 @@
 {
   "name": "egglang-cli",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Command-line runner for the Egg programming language 🥚🐣",
   "bin": {
     "egg": "./bin/egg.js",
