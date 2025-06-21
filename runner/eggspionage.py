@@ -15,7 +15,7 @@ def install_deps():
     print("Installing dependencies: opencv-python, numpy ...")
     try:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", "opencv-python", "numpy"])
-        print("Dependencies installed successfully! Please rerun the command.")
+        print("Dependencies installed successfully! Please rerun the eggspionage command.")
     except subprocess.CalledProcessError:
         print("Failed to install dependencies automatically. Please install manually:")
         print("  pip install --user opencv-python numpy")
@@ -26,7 +26,7 @@ def main():
         sys.exit(0)
 
     if not check_python_libs():
-        print("Error: Required Python packages are missing.")
+        print("Error: Required Python packages are missing.\n")
         print("Run this command to install them:")
         print("  eggspionage --setup")
         sys.exit(1)
