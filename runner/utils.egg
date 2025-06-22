@@ -1,15 +1,39 @@
-# utils.egg - simple utility functions
+# utils.egg - simplified utility functions for current EggLang
 
-# A basic utility to print a welcome message
+# Welcome message
 yolk welcome_message = "Welcome to the Egg Interpreter!"
-
 hatch welcome_message
 
-# A utility function to add two numbers (pseudo-function style)
-yolk add = (a, b) => {
-  yolk result = a + b
-  hatch result
-}
+# Simulated add function (set num1 and num2 before calling)
+fun add
+    yolk result = num1 + num2
+    hatch result
+lay
 
-# A utility variable for testing
+# Simulated multiply function (set num1 and num2 before calling)
+fun multiply
+    yolk result = num1 roll num2
+    hatch result
+lay
+
+# Check if a number is even (set num before calling)
+fun is_even
+    yolk result = num mod 2;
+    if result == 0:
+        hatch "Even";
+    else:
+        hatch "Odd";
+    endif
+lay
+
+# Print all items in a carton (set arr_name and size before calling)
+fun print_carton
+    yolk i = 0
+    loop i < size {
+        hatch arr_name at i
+        yolk i = i + 1
+    }
+lay
+
+# Utility test value
 yolk test_value = 42

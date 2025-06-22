@@ -92,6 +92,40 @@ def eval_expr(expr):
             expr = expr[1:-1].strip()
         else:
             break
+        
+
+    # Handle array method calls like a.append(4), a.pop(), a.remove(0)
+    array_method_match = re.match(r'(\w+)\.(append|pop|remove)\((.*)\)', expr)
+    if array_method_match:
+        arr_name = array_method_match.group(1)
+        method = array_method_match.group(2)
+        args_str = array_method_match.group(3).strip()
+
+        # Evaluate arguments for methods
+        args = [eval_expr(arg) for arg in split_args(args_str)]
+
+        if arr_name not in arrays:
+            print(f"fragile: carton '{arr_name}' not found")
+            return 0
+
+        if method == "append":
+            arrays[arr_name].append(args[0])
+            return None  # append doesn't return a value
+        elif method == "pop":
+            if arrays[arr_name]:
+                return arrays[arr_name].pop()
+            else:
+                print(f"fragile: '{arr_name}' is empty, cannot pop")
+                return 0
+        elif method == "remove":
+            if 0 <= args[0] < len(arrays[arr_name]):
+                return arrays[arr_name].pop(args[0])
+            else:
+                print(f"fragile: index {args[0]} out of range for '{arr_name}'")
+                return 0
+        else:
+            print(f"fragile: unknown array method '{method}'")
+            return 0
 
     # array access
     array_access_match = re.match(r'(\w+)\s+at\s+(.+)', expr)
@@ -385,14 +419,23 @@ def handle_incubate(line):
 
 
 def interpret_line(line, lines=None, current_index=None):
-    line = line.strip()
-    if not line or line.startswith('#'):  # <-- ADD THIS LINE
-        return
+    # Remove everything after a comment symbol '#'
+    line = line.split('#')[0].strip()  # This ensures that comments are ignored
     
+    if not line:  # Skip empty lines
+        return
     # Now each line is a single statement ending with ';' removed in run_egglang
     tokens = line.split()
     if not tokens:
         return
+    
+    # Handle control flow inside function bodies
+    if line.startswith('if ') and line.endswith(':'):
+        return handle_if_block(lines, current_index)
+    elif line == 'else:':
+        return current_index + 1  # handled in if-block
+    elif line == 'endif':
+        return current_index + 1
 
     cmd = tokens[0]
 
@@ -483,7 +526,10 @@ def interpret_line(line, lines=None, current_index=None):
         
         elif cmd == 'incubate':
             handle_incubate(line)
-            
+        
+        elif re.match(r'\w+\.(append|pop|remove)\(.*\)', line):
+            # Handle array method calls as standalone statements
+            eval_expr(line)
 
         else:
             print(f"fragile: unknown command '{cmd}'")
@@ -521,6 +567,8 @@ def run_egglang(code):
 
 
 if __name__ == '__main__':
+
+    
     # 1. Simple variable assignment and hatch
     sample1 = '''
     yolk x = 42;
@@ -660,15 +708,44 @@ if __name__ == '__main__':
     '''
     run_egglang(sample10)
     print("\n----------------\n")
-
+    
     sample_new_carton = '''
-    carton a = [12, 13, "Jay"];
+incubate utils.egg
 
-    yolk i = 0;
-    loop i < len(a) {
-    hatch a at i;
-    yolk i = i + 1;
-    }
+# Array demo
+carton eggs = [1, 2, 3];
+eggs.append(4);
+hatch len(eggs);  # 4
+yolk num1 = eggs.pop();  # removes 4
+yolk num2 = eggs.remove(0);  # removes at index 0 → [2, 3]
+crackup add
+crackup multiply
+
+yolk num = 7
+crackup is_even     # prints "Odd"
+
+
+# Loop demo
+yolk i = 0;
+loop i < len(eggs) {
+    hatch eggs at i
+    yolk i = i + 1
+}
+
+# Conditional demo
+if len(eggs) > 2:
+    hatch "Plenty of eggs!"
+else:
+    hatch "Need more eggs!"
+endif
+
+# Function demo
+fun greet
+    hatch "Hello from an egg function!"
+lay
+
+crackup greet
+ 
     '''
 
     run_egglang(sample_new_carton)
