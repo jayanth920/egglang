@@ -251,6 +251,23 @@ Egglang was originally hatched during a late-night coding session when I came ac
 - Balancing silliness with actual usability, making sure Egglang wasn't just a joke, but something you could write real (simple) programs in.
 - Designing syntax that feels "egg-themed" yet readable and intuitive
 - Debugging parser edge cases when nesting blocks or working with user-defined functions
+- `hatch` not recognizing expressions correctly (e.g., `hatch len(a)`)
+- Lack of support for parameterized function calls like `add(3, 4)`
+- Array methods (`a.append(4)`, `a.pop()`, `a.remove(0)`) initially treated as unknown commands
+- Conditional blocks (`if`, `else`, `endif`) not supported inside function bodies initially
+- Inline comments (`# comment`) breaking expression parsing and causing errors
+- Comparison operators (`==`, `!=`, `>`, `<`, etc.) not fully supported or causing issues in expression evaluation
+- `utils.egg` needed to be rewritten to avoid unsupported syntax (e.g., arrow functions, parameterized functions)
+- Function definitions (`fun`) didn’t support parameters or proper argument handling
+- Scoping issues requiring introduction of `current_env()` and `call_stack` to handle function local variables
+- `incubate` command loading files with unsupported syntax or comments caused silent failures or crashes
+- Nesting constructs like loops inside functions or nested loops initially did not execute properly
+
+## Feature Gaps / Open Issues
+- No support for function parameters or argument passing yet
+- No `return` keyword; results are printed only via `hatch`
+- Weak or no type checking; incorrect usage (like `len(42)`) returns 0 silently or causes issues
+- No support for defining custom operators or extending language syntax
 
 ## Accomplishments that I am proud of
 - The eggspionage easter egg, which is a terminal cam.
