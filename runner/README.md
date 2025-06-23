@@ -1,4 +1,4 @@
-# Egg Interpreter 🥚🐣
+# Egg 🥚🐣
 
 Egg is a minimalist, whimsical programming language inspired by eggs and birds — designed to be simple, fun, and easy to extend. It uses playful keywords like `yolk`, `shellmatch`, `carton`, and `hatch` to create a unique coding experience.
 
