@@ -404,18 +404,32 @@ def eggtools_call(func_name, args):
 # --- NEW: Modules / Imports ---
 
 def handle_incubate(line):
-    # Syntax: incubate filename.egg
     parts = line.split()
     if len(parts) != 2:
         print("fragile: invalid incubate syntax")
         return
+
     filename = parts[1]
-    if not os.path.isfile(filename):
-        print(f"fragile: cannot find file '{filename}'")
-        return
-    with open(filename, 'r') as f:
+
+    # 1. Check in the current working directory
+    user_path = os.path.join(os.getcwd(), filename)
+    if os.path.isfile(user_path):
+        path_to_load = user_path
+    else:
+        # 2. Fallback to the runner directory
+        runner_dir = os.path.dirname(os.path.abspath(__file__))
+        fallback_path = os.path.join(runner_dir, filename)
+        if os.path.isfile(fallback_path):
+            path_to_load = fallback_path
+        else:
+            print(f"fragile: cannot find file '{filename}'")
+            return
+
+    with open(path_to_load, 'r') as f:
         code = f.read()
     run_egglang(code)
+
+
 
 
 def interpret_line(line, lines=None, current_index=None):
