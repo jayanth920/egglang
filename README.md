@@ -23,9 +23,46 @@ Egg is a minimalist, whimsical programming language inspired by eggs and birds �
 
 ### Requirements
 
-- Python 3.x
-- Node.js (for the CLI and VSCode extension)
-- VS Code (to use the extension)
+- **Python 3.x**  
+  Install it from [python.org](https://www.python.org/downloads/) or use the instructions below.
+
+  **Mac:**
+  ```bash
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew install python
+  python3 --version
+  ```
+
+  **Windows:**
+  - Download from: https://www.python.org/downloads/windows/
+  - Run the installer and **check** “Add Python to PATH”
+  - Confirm installation:
+    ```cmd
+    python --version
+    ```
+
+- **Node.js** (for the CLI and VSCode extension)  
+  Get it from [nodejs.org](https://nodejs.org/) or install via terminal:
+
+  **Mac:**
+  ```bash
+  brew install node
+  node -v
+  npm -v
+  ```
+
+  **Windows:**
+  - Download the **LTS version** from https://nodejs.org/
+  - Run the installer (npm included)
+  - Confirm:
+    ```cmd
+    node -v
+    npm -v
+    ```
+
+- **VS Code** (to use the extension)  
+  - Download from: https://code.visualstudio.com/
+  - Install relevant extensions from the **Extensions Marketplace** inside VS Code.
 
 ---
 ## Run Egg Code
