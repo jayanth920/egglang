@@ -187,15 +187,7 @@ crackup say_hello
 
 - Simple error handling prints fragile: messages
 
-## Contributing
-Contributions, bug reports, and feature requests are welcome!
-
-- Fork the repo
-
-- Create a new branch
-
-- Submit a pull request
-
+---
 
 ## Example: Complete Egg Script
 ```bash
@@ -235,6 +227,17 @@ lay
 
 crackup greet
 ```
+---
+
+## Contributing
+Contributions, bug reports, and feature requests are welcome!
+
+- Fork the repo
+
+- Create a new branch
+
+- Submit a pull request
+
 ---
 ## Easter Egg - 🥚 Eggspionage: Terminal Cam in ASCII
 
