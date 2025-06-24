@@ -1,7 +1,9 @@
 # Egg 🥚🐣
 
-Egg is a minimalist, whimsical programming language inspired by eggs and birds — designed to be simple, fun, and easy to extend. It uses playful keywords like `yolk`, `shellmatch`, `carton`, and `hatch` to create a unique coding experience.
+Egg is a minimalist, whimsical programming language inspired by eggs and birds , designed to be simple, fun, and easy to extend. 
+- Built for the VelociCode challenge, EggLang embraces the prehistoric spirit of the event by treating **eggs not just as symbols**, but as a full-blown *design philosophy*. From the syntax (`yolk`, `hatch`, `carton`, `crackup`) to the underlying mechanics, every part of EggLang is inspired by birds, eggs, and evolutionary fun.
 
+- Just like life hatching from an egg, every EggLang program begins with a humble `yolk` (variable), evolves through control flow like `loop` and `shellmatch`, and ends with a glorious `hatch` (output). It's a language that doesn’t just run , it **evolves on your terminal**, one 🐣 at a time.
 ---
 
 ## Features
@@ -149,13 +151,13 @@ crackup say_hello
 ```
 
 ### Built-in Functions
-- random(a, b) — random int between a and b
+- random(a, b) - random int between a and b
 
-- eggtime() — current timestamp string
+- eggtime() - current timestamp string
 
-- len(x) — length of string or list
+- len(x) - length of string or list
 
-- type(x) — type name of value
+- type(x) - type name of value
 
 ## File Inclusion
 - Use incubate filename.egg to include and run another Egg file.
@@ -285,7 +287,7 @@ Egglang was originally hatched during a late-night coding session when I came ac
 ## How I built it
 - Interpreter: Walked the AST and evaluated each node using Python classes.
 - Features: Added variables (yolk), arrays (carton), pattern matching (shellmatch), functions (crackup, lay), and built-in utilities like eggtime().
-- Extras: Added fun side commands like eggspionage — a secret easter egg animation when you run eggspionage in the CLI.
+- Extras: Added fun side commands like eggspionage, a secret easter egg animation when you run eggspionage in the CLI.
 
 ## Challenges I ran into
 - Balancing silliness with actual usability, making sure Egglang wasn't just a joke, but something you could write real (simple) programs in.
